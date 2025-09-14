@@ -230,8 +230,6 @@ class RadioBrowser:
         )
 
         languages = orjson.loads(languages_data)  # pylint: disable=no-member
-        for language in languages:  # pylint: disable=not-an-iterable
-            language["name"] = language["name"].title()
 
         # pylint: disable-next=not-an-iterable
         return [Language.from_dict(language) for language in languages]
